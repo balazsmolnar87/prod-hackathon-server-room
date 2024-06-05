@@ -22,7 +22,7 @@ The objective of this project is to develop an efficient solution for monitoring
 - **Fail Notification**: Alerts the system if any device is not reporting.
 
 ## Architecture
-![Infrastructure](TeamSolo_infra.svg)
+![Infrastructure](./static/infra.png)
 
 ## Usage
 1. Deploy the necessary AWS services (IoT Core, Timestream, S3, Managed Grafana).
@@ -32,8 +32,9 @@ The objective of this project is to develop an efficient solution for monitoring
 
 ## Prerequisites
 - AWS Account
-- IoT Devices
 - Basic knowledge of AWS services
+- IoT Devices
+- Access to Wifi and the internet
 
 ## Setup Instructions
 1. Clone the repository.
@@ -43,4 +44,4 @@ The objective of this project is to develop an efficient solution for monitoring
 5. Connect Amazon Managed Grafana to Timestream for data visualization.
 
 ## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License.
