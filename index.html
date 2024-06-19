@@ -1,0 +1,687 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>TeamSolo for Prod Hackathon</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b212fcca-3a58-4016-a5b5-0838b6361fa4" class="page sans"><header><img class="page-cover-image" src="https://images.wevolver.com/eyJidWNrZXQiOiJ3ZXZvbHZlci1wcm9qZWN0LWltYWdlcyIsImtleSI6IjAuaXdwbWNkY29oY2lyY3VpdF9ib2FyZHMuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjoxMjAwLCJoZWlnaHQiOjYwMCwiZml0IjoiY292ZXIifX19" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🤖</span></div><h1 class="page-title">TeamSolo for Prod Hackathon</h1><p class="page-description"></p></header><div class="page-body"><p id="c80e741f-78db-4318-98dd-3e01f076d22a" class="">
+</p><h2 id="557085e0-9687-4463-a105-71300425360a" class="">Team members:</h2><p id="87a7c430-fbf5-4abd-b18e-9aa8a990c028" class="">Balazs Molnar</p><p id="1e60804b-6df0-4e32-a2ef-9b691bc2fc48" class="">
+</p><h2 id="68862b84-ada2-48bd-a50c-38a9824f261b" class=""><strong>Solution:</strong></h2><p id="92009d9e-b7e6-43b2-b55e-7ac21ec94022" class="">In each server room an ESP8266 device with a DHT22 sensor collects and sends temperature and humidity data to AWS IoT via Wifi using MQTT. Data is forwarded to Amazon Timestream, which can be queried and presented in Amazon managed Grafana. Various alerts can be set up in Grafana to send messages to Slack and emails to admins when certain conditions are met.</p><p id="328e8e9b-b918-46c7-ae61-ff552fb7ccb6" class="">
+</p><h2 id="24bf53ce-8558-4213-b650-67b070ffabf8" class="">Parts list:</h2><table id="6c364ab8-35ec-493d-80fd-db4a0991af98" class="simple-table"><thead class="simple-table-header"><tr id="b42d6f5d-e385-478a-b9b2-a3995586676a"><th id="}gFN" class="simple-table-header-color simple-table-header" style="width:172.65625px">Manufacturer&#x27;s marking</th><th id="Vx=G" class="simple-table-header-color simple-table-header" style="width:213.65625px">Short description</th><th id=";Kcb" class="simple-table-header-color simple-table-header" style="width:81.65625px">Amount</th><th id="`vD_" class="simple-table-header-color simple-table-header">Data sheet</th><th id="xW=O" class="simple-table-header-color simple-table-header">Price per unit</th></tr></thead><tbody><tr id="80b88c69-1e57-4365-bf42-7d759f312d1d"><td id="}gFN" class="" style="width:172.65625px"><strong>NodeMCU-ESP8266-CH</strong></td><td id="Vx=G" class="" style="width:213.65625px">Lua, CH340+ESP8266 WiFi modul, 802.11bgn</td><td id=";Kcb" class="" style="width:81.65625px">1</td><td id="`vD_" class=""><a href="https://www.hestore.hu/prod_getfile.php?id=9492">https://www.hestore.hu/prod_getfile.php?id=13584</a></td><td id="xW=O" class="">2,000 HUF</td></tr><tr id="54a12418-8c15-4503-918e-81ac821aef71"><td id="}gFN" class="" style="width:172.65625px"><strong>HW-389</strong></td><td id="Vx=G" class="" style="width:213.65625px">NodeMCU kifejtő panel, ESP8266-CH WiFi modul-hoz</td><td id=";Kcb" class="" style="width:81.65625px">1</td><td id="`vD_" class=""><a href="https://www.hestore.hu/prod_getfile.php?id=12966">https://www.hestore.hu/prod_getfile.php?id=12966</a></td><td id="xW=O" class="">1,000 HUF</td></tr><tr id="391e8db5-1d04-45ce-9ed7-7f6668f7432d"><td id="}gFN" class="" style="width:172.65625px"><strong>KS 12V/1A</strong></td><td id="Vx=G" class="" style="width:213.65625px">Adapter, hálózati, 230V / 12V 1A, OEM</td><td id=";Kcb" class="" style="width:81.65625px">1</td><td id="`vD_" class="">N/A</td><td id="xW=O" class="">2,000 HUF</td></tr><tr id="e08341bb-cfbd-4194-b28f-887857135530"><td id="}gFN" class="" style="width:172.65625px"><strong>DHT22-M</strong></td><td id="Vx=G" class="" style="width:213.65625px">Hőmérséklet és páratartalom érzékelő modul (AM2302)</td><td id=";Kcb" class="" style="width:81.65625px">1</td><td id="`vD_" class=""><a href="https://www.hestore.hu/prod_getfile.php?id=8633">https://www.hestore.hu/prod_getfile.php?id=8633</a></td><td id="xW=O" class="">800 HUF</td></tr><tr id="4f385d57-cba1-4180-a718-1185736491f9"><td id="}gFN" class="" style="width:172.65625px"><strong>3D printed case</strong></td><td id="Vx=G" class="" style="width:213.65625px">A casing tailored to this specific application</td><td id=";Kcb" class="" style="width:81.65625px">1</td><td id="`vD_" class="">N/A</td><td id="xW=O" class="">500 HUF</td></tr></tbody></table><figure id="8120dd44-21f8-4ce8-a586-94875ad5eb39"><a href="https://www.hestore.hu/prod_10036635.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">NodeMCU-ESP8266-CH</div><div class="bookmark-description">Lua, CH340+ESP8266 WiFi modul, 802.11bgn</div></div><div class="bookmark-href"><img src="https://www.hestore.hu/favicon.ico" class="icon bookmark-icon"/>https://www.hestore.hu/prod_10036635.html</div></div><img src="https://www.hestore.hu/images/comp/full/bm9kZW1jdS1sdWEtY2g.jpg" class="bookmark-image"/></a></figure><p id="05d120e2-fef5-4932-8999-5b376d1517dd" class="">
+</p><figure id="d6d8c05d-fd04-430d-980e-73c416ba53a8"><a href="https://www.hestore.hu/prod_10041687.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">HW-389</div><div class="bookmark-description">NodeMCU kifejtő panel, ESP8266-CH WiFi modul-hoz</div></div><div class="bookmark-href"><img src="https://www.hestore.hu/favicon.ico" class="icon bookmark-icon"/>https://www.hestore.hu/prod_10041687.html</div></div><img src="https://www.hestore.hu/images/comp/full/OVc4SC0z.jpg" class="bookmark-image"/></a></figure><p id="2478a765-e477-4b7b-847b-5e841f9d0b80" class="">
+</p><figure id="258becda-5250-44e9-ba27-6720a68277a5"><a href="https://www.hestore.hu/prod_10035814.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">KS 12V/1A</div><div class="bookmark-description">Adapter, hálózati, 230V / 12V 1A, OEM</div></div><div class="bookmark-href"><img src="https://www.hestore.hu/favicon.ico" class="icon bookmark-icon"/>https://www.hestore.hu/prod_10035814.html</div></div><img src="https://www.hestore.hu/images/comp/full/WlNJNV8wMQMQ.jpg" class="bookmark-image"/></a></figure><p id="594ce3d7-c33c-4cf0-9f35-b57cedc7c134" class="">
+</p><figure id="6d9c1f4c-1a9e-46e6-aa13-85dd491bf713"><a href="https://www.hestore.hu/prod_10036812.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">DHT22-M</div><div class="bookmark-description">Hőmérséklet és páratartalom érzékelő modul (AM2302)</div></div><div class="bookmark-href"><img src="https://www.hestore.hu/favicon.ico" class="icon bookmark-icon"/>https://www.hestore.hu/prod_10036812.html</div></div><img src="https://www.hestore.hu/images/comp/full/VDIySE1ELQ.jpg" class="bookmark-image"/></a></figure><p id="fe8c9b7d-7b71-4725-8182-2dce171cbbc3" class="">
+</p><h2 id="e6759249-1e42-44e6-8629-494259b48ffa" class="">Proximate price range:</h2><h2 id="21d1a40a-c8f1-49de-9309-c2a7f1301405" class="">AWS Costs:</h2><p id="7c18f6f8-aecc-4c39-a540-99d4ca2adc64" class="">Each device sends data every 5 seconds, which includes:</p><ul id="e57720f5-bfa8-4e95-88d4-13d42da0ba2d" class="bulleted-list"><li style="list-style-type:disc">Device ID</li></ul><ul id="4a7ec846-a8ad-4cff-aba7-ea53e56e805b" class="bulleted-list"><li style="list-style-type:disc">Current temperature</li></ul><ul id="c2ce2b88-2d1a-4bb4-bf47-7e073e192e4d" class="bulleted-list"><li style="list-style-type:disc">Current humidity</li></ul><p id="64dd8b39-1193-40f9-942e-b1b21777c61f" class="">Assuming each data point is 512 bytes:</p><ul id="554bc2e9-d157-46ff-bd08-e92b49d35c40" class="bulleted-list"><li style="list-style-type:disc"><strong>Number of messages per device per month</strong>:<ul id="cc67932a-2a5a-4a68-96ef-b84b9e44d7c5" class="bulleted-list"><li style="list-style-type:circle">1 message every 5 seconds</li></ul><ul id="c0ca4512-5e91-4615-8de0-c63d7e2d8558" class="bulleted-list"><li style="list-style-type:circle">60 seconds/minute * 60 minutes/hour * 24 hours/day * 30 days/month = 2,592,000 seconds/month</li></ul><ul id="f0437eb9-1a46-4066-974c-1009362b11ac" class="bulleted-list"><li style="list-style-type:circle">Number of messages per device: 2,592,000 / 5 = 518,400 messages/month</li></ul></li></ul><ul id="49a37232-f915-4f89-a826-c5cf95e2d2a9" class="bulleted-list"><li style="list-style-type:disc"><strong>Total messages for 4 devices</strong>:<ul id="397acfac-b3b4-4aae-a7a5-0d064b00c8c7" class="bulleted-list"><li style="list-style-type:circle">518,400 messages/device * 4 devices = 2,073,600 messages/month</li></ul></li></ul><ul id="7d600542-c57a-4a1f-91b3-b9037c821284" class="bulleted-list"><li style="list-style-type:disc"><strong>Cost Calculation for AWS IoT Core</strong>:<ul id="fa908ac0-bba6-4fd1-981f-3ca9295317e9" class="bulleted-list"><li style="list-style-type:circle"><strong>Message Cost</strong>: 2.0736 million messages * $5/1 million messages = $10.37/month</li></ul><ul id="cecaed62-9f52-4dfd-886c-56529347fd12" class="bulleted-list"><li style="list-style-type:circle"><strong>Rules and Actions Cost</strong>: 2.0736 million messages * $0.15/1 million messages = $0.31/month</li></ul></li></ul><h3 id="0d458406-e2d7-4712-b2d0-fcd2e5acb84b" class="">Amazon Timestream</h3><p id="45d4972d-099b-4566-addc-2da713b61a22" class="">Storing the data for one month:</p><ul id="87c920ae-f3e0-4d4b-bf95-1fc1e5ac5d59" class="bulleted-list"><li style="list-style-type:disc"><strong>Data Volume</strong>:<ul id="269e5a06-f218-4550-9419-78722eb8c9c1" class="bulleted-list"><li style="list-style-type:circle">Each message is 512 bytes.</li></ul><ul id="da72a882-4051-49e5-82ee-0f385daf69bf" class="bulleted-list"><li style="list-style-type:circle">Data per device: 518,400 messages * 512 bytes = 265,420,800 bytes ≈ 0.25 GB/month</li></ul><ul id="b9bbb965-4083-405c-ab37-2f9b9333c452" class="bulleted-list"><li style="list-style-type:circle">Total data for 4 devices: 0.25 GB/device * 4 devices = 1 GB/month</li></ul></li></ul><ul id="d9c442d7-cfe2-4900-a043-ed5bae14c7d6" class="bulleted-list"><li style="list-style-type:disc"><strong>Cost Calculation for Amazon Timestream</strong>:<ul id="8ff29607-b8a9-47d1-8143-dc0dc1d36f7f" class="bulleted-list"><li style="list-style-type:circle"><strong>Ingested Data Cost</strong>: 1 GB * $0.50/GB = $0.50/month</li></ul><ul id="f20ca1a9-cae3-4bfa-bb48-9158edf3bcca" class="bulleted-list"><li style="list-style-type:circle"><strong>Storage Cost</strong>: 1 GB * $0.03/GB = $0.03/month</li></ul><ul id="535c0de4-c59a-4295-925e-5aaf15848e9c" class="bulleted-list"><li style="list-style-type:circle"><strong>Query Cost</strong>: Assuming 1 million rows scanned per month = $0.01</li></ul></li></ul><h3 id="7403ad55-cc20-4ea6-88d0-1091b3a562a2" class="">Amazon S3 (for backup)</h3><p id="96a44cdc-81e2-4aa7-aafb-69814ecada5b" class="">Assuming the data is moved to S3 after one month:</p><ul id="0f5e5c42-6238-4970-9964-23febda35b48" class="bulleted-list"><li style="list-style-type:disc"><strong>Data Volume</strong>: 1 GB/month (same as Timestream storage)</li></ul><ul id="6a405551-7337-40e2-84c1-d3c9dcba5bdf" class="bulleted-list"><li style="list-style-type:disc"><strong>Storage Cost</strong>:<ul id="626a0261-bdc2-44d4-b349-3247272c4daa" class="bulleted-list"><li style="list-style-type:circle">S3 Standard Storage: $0.023 per GB</li></ul></li></ul><ul id="173727d4-4ce5-4042-8353-246e4e524c59" class="bulleted-list"><li style="list-style-type:disc"><strong>Cost Calculation for Amazon S3</strong>:<ul id="beb1e1e1-f0cf-44df-8a87-eef81428a4dd" class="bulleted-list"><li style="list-style-type:circle"><strong>Storage Cost</strong>: 1 GB * $0.023/GB = $0.023/month</li></ul></li></ul><h3 id="8f4754b9-cca6-4097-bb69-be5895e6f68d" class="">Amazon Managed Grafana</h3><ul id="fcf9f478-b5da-4d0a-bf5d-03ffda0e9eb8" class="bulleted-list"><li style="list-style-type:disc"><strong>Grafana Cost</strong>: $9/month for 1 user</li></ul><h3 id="1a584b18-c5f1-4a18-82a6-3a46366faec9" class="">Total Monthly Cost for AWS</h3><p id="da9113e3-f1bd-47f7-9765-41bb6f99ee26" class="">Adding up the individual costs:</p><ol type="1" id="fca8bb22-293b-42cc-b9ac-47b6c5cfec40" class="numbered-list" start="1"><li><strong>AWS IoT Core</strong>:<ul id="e0c535be-f7ed-4ffa-b3c8-16c9b9b82195" class="bulleted-list"><li style="list-style-type:disc">Message Cost: $10.37</li></ul><ul id="e554b302-477a-4b5d-b2de-026b2db635ba" class="bulleted-list"><li style="list-style-type:disc">Rules and Actions Cost: $0.31</li></ul><ul id="5001cb40-a5e9-4bf8-9a0f-e06599ee6a57" class="bulleted-list"><li style="list-style-type:disc"><strong>Total</strong>: $10.68/month</li></ul></li></ol><ol type="1" id="363ce4fd-e0e4-4fb5-9aa7-ce5c5f40c360" class="numbered-list" start="2"><li><strong>Amazon Timestream</strong>:<ul id="79ad9a2c-1796-49af-98ce-1ea939fed4a0" class="bulleted-list"><li style="list-style-type:disc">Ingested Data Cost: $0.50</li></ul><ul id="3f79f7ea-b518-4cdf-a7b9-88e4904b4369" class="bulleted-list"><li style="list-style-type:disc">Storage Cost: $0.03</li></ul><ul id="88fcc261-0a5f-429b-ac33-5010168ab21b" class="bulleted-list"><li style="list-style-type:disc">Query Cost: $0.01</li></ul><ul id="27bcf45e-6ac0-4e40-9e13-65527fc80165" class="bulleted-list"><li style="list-style-type:disc"><strong>Total</strong>: $0.54/month</li></ul></li></ol><ol type="1" id="6a8cc0fc-4299-4258-adce-6a4fa9e1c8d2" class="numbered-list" start="3"><li><strong>Amazon S3</strong>:<ul id="6502ca6f-2c76-4e07-af28-a26594703735" class="bulleted-list"><li style="list-style-type:disc">Storage Cost: $0.023/month</li></ul></li></ol><ol type="1" id="e3c2578b-5a21-40ce-af7d-80d077ac215a" class="numbered-list" start="4"><li><strong>Amazon Managed Grafana</strong>:<ul id="c080ecae-6abb-4053-8623-a99942c61b9b" class="bulleted-list"><li style="list-style-type:disc"><strong>Total</strong>: $9/month</li></ul></li></ol><p id="4de29efb-03b7-4731-99bb-214802d84cc2" class=""><strong>Total Estimated Monthly Cost</strong>: $10.68 (IoT Core) + $0.54 (Timestream) + $0.023 (S3) + $9 (Grafana) = <strong><span style="border-bottom:0.05em solid">$20.243/month which is around 7,300 HUF.</span></strong></p><h2 id="28d38fd5-147a-44a4-8710-74a0274a59d9" class="">Hardware Costs:</h2><p id="2e9d7907-01e0-44d6-8b09-e9b550f2072d" class="">Prices per installation is approximately 6,300 HUF, for four server rooms it comes to <strong><span style="border-bottom:0.05em solid">25,200 HUF</span></strong>.</p><p id="ca37affa-3c3c-4421-b823-d57af69f9bb8" class="">
+</p><h2 id="8f0d91a8-5a97-49fc-9711-4c99e5430b3f" class="">Initial total monthly cost:</h2><p id="fed8b0df-2767-47a0-b6fb-29a04b354f73" class="">Assuming these characteristics initial total monthly comes to <em><strong><span style="border-bottom:0.05em solid">32,500 HUF.</span></strong></em></p><p id="d87afd2e-798a-41c2-bce2-dc110bef918b" class=""><em><strong><span style="border-bottom:0.05em solid"><br/><br/></span></strong></em>This number can be reduced by:<div class="indented"><p>going on-prem</p><p id="69dd59f2-52e1-4761-b406-019d6cb54dd3" class="">using a micro USB to supply power to the ESP8266 instead of the PSU</p><p id="282a5bb1-20bf-416b-afdc-83438f562b30" class="">sending and storing fewer characters, less data</p><p id="4a4d1b11-6907-46bb-9308-8421c54a6ec4" class="">sending data less frequently</p><p id="bbf2b37d-606f-4aec-b959-2cd31a0a16e8" class="">setting up a lifecycle to erase (or store in S3) old data</p></div></p><p id="550c12dc-e4a6-4db2-884c-8bbcaadda4dd" class="">
+</p><h2 id="eb9ae6f8-c179-4abd-b877-fa27b5467363" class=""><br/>Sources:<br/><br/><a href="https://www.instructables.com/IoT-ESP8266-Series-2-Monitor-Data-Through-ThingSpe/">https://www.instructables.com/IoT-ESP8266-Series-2-Monitor-Data-Through-ThingSpe/</a></h2><p id="21ef9fde-3e0f-4b60-b7c2-fbd565661702" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
