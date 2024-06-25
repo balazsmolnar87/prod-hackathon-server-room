@@ -1,6 +1,11 @@
 # IoT Sensor Data to AWS
 
+### Check out my other repo, where I work on implementing this in Docker and Minikube.
+### [https://github.com/balazsmolnar87/iot-minikube](https://github.com/balazsmolnar87/iot-minikube)
+
 This project demonstrates how to send IoT sensor data to AWS IoT Core, store it in Amazon Timestream, and visualize it using Amazon Managed Grafana. The application captures data from multiple IoT devices, processes it through AWS IoT services, and provides a user-friendly dashboard for monitoring. Additionally, the system sends alerts and notifications to Slack and email, ensuring prompt communication about critical events.
+
+More info: [https://balazsmolnar87.github.io/prod-hackathon-server-room/](https://balazsmolnar87.github.io/prod-hackathon-server-room/)
 
 ## Purpose
 The objective of this project is to develop an efficient solution for monitoring and reporting the temperature and humidity levels in server rooms. The system incorporates several key features to maintain optimal conditions and ensure smooth operations:
